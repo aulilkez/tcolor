@@ -19,7 +19,7 @@ export default defineConfig({
   },
   esbuildOptions(options) {
     options.banner = {
-      js: "// tcolors - Ultra-fast ANSI color library Copyright (c) 2024 - MIT License",
+      js: "// x-colors - Ultra-fast ANSI color library Copyright (c) 2024 - MIT License",
     };
   },
 });

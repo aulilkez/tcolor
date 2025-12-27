@@ -1,12 +1,12 @@
-# 🎨 tcolors
+# 🎨 x-colors
 
 <div align="center">
 
-[![npm version](https://img.shields.io/npm/v/tcolorss.svg?style=flat-square)](https://www.npmjs.com/package/tcolorss)
-[![npm downloads](https://img.shields.io/npm/dm/tcolorss.svg?style=flat-square)](https://www.npmjs.com/package/tcolorss)
-[![bundle size](https://img.shields.io/bundlephobia/minzip/tcolorss?style=flat-square)](https://bundlephobia.com/package/tcolorss)
-[![license](https://img.shields.io/npm/l/tcolorss.svg?style=flat-square)](https://github.com/aulilkez/tcolorss/blob/main/LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/aulilkez/tcolorss?style=flat-square)](https://github.com/aulilkez/tcolorss)
+[![npm version](https://img.shields.io/npm/v/x-colors.svg?style=flat-square)](https://www.npmjs.com/package/x-colors)
+[![npm downloads](https://img.shields.io/npm/dm/x-colors.svg?style=flat-square)](https://www.npmjs.com/package/x-colors)
+[![bundle size](https://img.shields.io/bundlephobia/minzip/x-colors?style=flat-square)](https://bundlephobia.com/package/x-colors)
+[![license](https://img.shields.io/npm/l/x-colors.svg?style=flat-square)](https://github.com/aulilkez/x-colors/blob/main/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/aulilkez/x-colors?style=flat-square)](https://github.com/aulilkez/x-colors)
 
 **⚡ The fastest ANSI color library for Node.js with zero dependencies**
 
@@ -20,7 +20,7 @@ Built for maximum performance and developer experience.
 
 ## 📑 Table of Contents
 
-- [Why tcolors?](#-why-tcolors)
+- [Why xcolors?](#-why-xcolors)
 - [Features](#-features)
 - [Performance Benchmarks](#-performance-benchmarks)
 - [Installation](#-installation)
@@ -45,18 +45,18 @@ Built for maximum performance and developer experience.
 
 ---
 
-## 🎯 Why tcolors?
+## 🎯 Why xcolors?
 
-`tcolors` is built from the ground up with **performance as the #1 priority**. It provides a rich feature set while consistently outperforming popular alternatives.
+`xcolors` is built from the ground up with **performance as the #1 priority**. It provides a rich feature set while consistently outperforming popular alternatives.
 
 ```javascript
 // 🐌 Other libraries (100k ops)
-chalk.red.bold('text');      // ~451ms
-kleur.red().bold('text');    // ~726ms
+chalk.red.bold("text"); // ~451ms
+kleur.red().bold("text"); // ~726ms
 
-// ⚡ tcolors
-tcolors('text').red().bold(); // ~193ms
-tcolors.red('text');          // Even faster for single styles!
+// ⚡ xcolors
+xcolors("text").red().bold(); // ~193ms
+xcolors.red("text"); // Even faster for single styles!
 ```
 
 **Up to 145% faster than Chalk** • **Almost 300% faster than Kleur** • **Zero dependencies**
@@ -66,6 +66,7 @@ tcolors.red('text');          // Even faster for single styles!
 ## ✨ Features
 
 ### Core Features
+
 - 🚀 **Blazing Fast** - Significantly faster than popular alternatives in overall performance.
 - 📦 **Zero Dependencies** - No bloat, pure speed, tiny bundle size.
 - 🔥 **Dual Module** - Full ESM and CommonJS support.
@@ -74,6 +75,7 @@ tcolors.red('text');          // Even faster for single styles!
 - ⛓️ **Chainable API** - Intuitive and flexible.
 
 ### Color Support
+
 - 🎨 **16 Basic Colors** - Standard ANSI colors.
 - ✨ **Bright Colors** - 8 additional bright variants.
 - 🖼️ **Background Colors** - All colors available as backgrounds.
@@ -85,6 +87,7 @@ tcolors.red('text');          // Even faster for single styles!
 - 🌟 **Rainbow** - Automatic rainbow effects on text.
 
 ### Developer Experience
+
 - 🎭 **Multiple Styles** - Bold, italic, underline, and more.
 - 🔗 **Method Chaining** - Combine multiple styles with ease.
 - 🎪 **Direct Calls** - A separate, faster API for single styles.
@@ -97,25 +100,25 @@ tcolors.red('text');          // Even faster for single styles!
 
 ## 📊 Performance Benchmarks
 
-> **Note:** Benchmark results can fluctuate based on system activity and environment. The key takeaway is the performance *ratio* between libraries, which remains consistent.
+> **Note:** Benchmark results can fluctuate based on system activity and environment. The key takeaway is the performance _ratio_ between libraries, which remains consistent.
 
 Benchmark results running 100,000 iterations. Lower is better.
 
-| Test | tcolors | Chalk | Kleur | Winner |
-|------|--------|-------|-------|--------|
-| Simple color | 15.72ms | 20.78ms | 15.68ms | 🏆 Kleur |
-| **Chained styles** | **16.21ms** | 21.64ms | 239.79ms | 🏆 **Tcolor** |
-| **RGB color** | **16.81ms** | 147.25ms | Not Supported | 🏆 **Tcolor** |
-| **Hex color** | **52.72ms** | 218.46ms | Not Supported | 🏆 **Tcolor** |
-| **Background + foreground** | **12.56ms** | 23.28ms | 253.11ms | 🏆 **Tcolor** |
-| **Multiple styles** | **22.71ms** | 41.88ms | 260.28ms | 🏆 **Tcolor** |
-| **Direct function call** | **7.74ms** | 17.68ms | 11.24ms | 🏆 **Tcolor** |
-| Strip ANSI codes | 32.09ms | 30.60ms | 30.27ms | 🏆 Kleur |
+| Test                        | xcolors     | Chalk    | Kleur         | Winner        |
+| --------------------------- | ----------- | -------- | ------------- | ------------- |
+| Simple color                | 15.72ms     | 20.78ms  | 15.68ms       | 🏆 Kleur      |
+| **Chained styles**          | **16.21ms** | 21.64ms  | 239.79ms      | 🏆 **xcolor** |
+| **RGB color**               | **16.81ms** | 147.25ms | Not Supported | 🏆 **xcolor** |
+| **Hex color**               | **52.72ms** | 218.46ms | Not Supported | 🏆 **xcolor** |
+| **Background + foreground** | **12.56ms** | 23.28ms  | 253.11ms      | 🏆 **xcolor** |
+| **Multiple styles**         | **22.71ms** | 41.88ms  | 260.28ms      | 🏆 **xcolor** |
+| **Direct function call**    | **7.74ms**  | 17.68ms  | 11.24ms       | 🏆 **xcolor** |
+| Strip ANSI codes            | 32.09ms     | 30.60ms  | 30.27ms       | 🏆 Kleur      |
 
 ### Performance Graph (Total Time)
 
 ```
-tcolors: ███████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 176.55ms
+xcolors: ███████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 176.55ms
 Chalk:  ████████████████████████████████░░░░░░░░░░░░░░░░░░ 521.58ms (+195% slower)
 Kleur:  ██████████████████████████████████████████████████ 810.36ms (+359% slower)
 ```
@@ -129,6 +132,7 @@ Kleur:  ████████████████████████
 5.  **Zero Dependencies** - No overhead from external libraries.
 
 **Run benchmarks yourself:**
+
 ```bash
 npm run benchmark
 ```
@@ -138,21 +142,25 @@ npm run benchmark
 ## 📦 Installation
 
 ### npm
+
 ```bash
-npm install tcolors
+npm install x-colors
 ```
 
 ### yarn
+
 ```bash
-yarn add tcolors
+yarn add x-colors
 ```
 
 ### pnpm
+
 ```bash
-pnpm add tcolors
+pnpm add x-colors
 ```
 
 ### Requirements
+
 - Node.js >= 14.0.0
 - Works with any bundler (Webpack, Rollup, Vite, esbuild, etc.)
 - Compatible with TypeScript 4.0+
@@ -164,42 +172,42 @@ pnpm add tcolors
 ### Basic Usage (ESM)
 
 ```javascript
-import tcolors from 'tcolors';
+import xcolors from "x-colors";
 
 // Simple colors
-console.log(tcolors('Hello World').red());
-console.log(tcolors('Success!').green().bold());
-console.log(tcolors('Warning').yellow().underline());
+console.log(xcolors("Hello World").red());
+console.log(xcolors("Success!").green().bold());
+console.log(xcolors("Warning").yellow().underline());
 
 // Background colors
-console.log(tcolors('Error').white().bgRed());
+console.log(xcolors("Error").white().bgRed());
 
 // Chaining multiple styles
-console.log(tcolors('Important').red().bold().underline().bgYellow());
+console.log(xcolors("Important").red().bold().underline().bgYellow());
 
 // Direct function calls for single styles (faster)
-console.log(tcolors.blue('Blue text'));
+console.log(xcolors.blue("Blue text"));
 ```
 
 ### CommonJS
 
 ```javascript
-const tcolors = require('tcolors');
+const xcolors = require("x-colors");
 
-console.log(tcolors('Hello').green());
-console.log(tcolors.red('Red text'));
+console.log(xcolors("Hello").green());
+console.log(xcolors.red("Red text"));
 ```
 
 ### TypeScript
 
 ```typescript
-import tcolors from 'tcolors';
+import xcolors from "x-colors";
 
-// The tcolors object converts to a string automatically
-console.log(tcolors('TypeScript').blue().bold());
+// The xcolors object converts to a string automatically
+console.log(xcolors("TypeScript").blue().bold());
 
 // You can also explicitly convert it
-const message: string = tcolors('Explicit conversion').green().toString();
+const message: string = xcolors("Explicit conversion").green().toString();
 console.log(message);
 ```
 
@@ -212,15 +220,15 @@ console.log(message);
 Apply foreground colors to your text.
 
 ```javascript
-tcolors('text').black();
-tcolors('text').red();
-tcolors('text').green();
-tcolors('text').yellow();
-tcolors('text').blue();
-tcolors('text').magenta();
-tcolors('text').cyan();
-tcolors('text').white();
-tcolors('text').gray(); // or .grey()
+xcolors("text").black();
+xcolors("text").red();
+xcolors("text").green();
+xcolors("text").yellow();
+xcolors("text").blue();
+xcolors("text").magenta();
+xcolors("text").cyan();
+xcolors("text").white();
+xcolors("text").gray(); // or .grey()
 ```
 
 ---
@@ -230,16 +238,17 @@ tcolors('text').gray(); // or .grey()
 Apply background colors to your text.
 
 ```javascript
-tcolors('text').bgBlack();
-tcolors('text').bgRed();
-tcolors('text').bgGreen();
+xcolors("text").bgBlack();
+xcolors("text").bgRed();
+xcolors("text").bgGreen();
 // ...and so on for all basic and bright colors.
 ```
 
 **Example with Foreground + Background:**
+
 ```javascript
-console.log(tcolors('Success').green().bgBlack());
-console.log(tcolors('Error').white().bgRed());
+console.log(xcolors("Success").green().bgBlack());
+console.log(xcolors("Error").white().bgRed());
 ```
 
 ---
@@ -250,13 +259,13 @@ Brighter, more vibrant color variants.
 
 ```javascript
 // Bright foreground
-tcolors('text').brightRed();
-tcolors('text').brightGreen();
+xcolors("text").brightRed();
+xcolors("text").brightGreen();
 // ...etc
 
 // Bright background
-tcolors('text').bgBrightRed();
-tcolors('text').bgBrightGreen();
+xcolors("text").bgBrightRed();
+xcolors("text").bgBrightGreen();
 // ...etc
 ```
 
@@ -267,13 +276,13 @@ tcolors('text').bgBrightGreen();
 Apply text styling and formatting.
 
 ```javascript
-tcolors('text').bold();
-tcolors('text').dim();
-tcolors('text').italic();
-tcolors('text').underline();
-tcolors('text').inverse();
-tcolors('text').hidden();
-tcolors('text').strikethrough();
+xcolors("text").bold();
+xcolors("text").dim();
+xcolors("text").italic();
+xcolors("text").underline();
+xcolors("text").inverse();
+xcolors("text").hidden();
+xcolors("text").strikethrough();
 ```
 
 ---
@@ -284,11 +293,11 @@ Combine multiple styles by chaining methods in any order.
 
 ```javascript
 // Multiple styles
-tcolors('text').red().bold();
-tcolors('text').green().underline().italic();
+xcolors("text").red().bold();
+xcolors("text").green().underline().italic();
 
 // All together
-tcolors('Important!').red().bold().underline().bgYellow();
+xcolors("Important!").red().bold().underline().bgYellow();
 ```
 
 ---
@@ -299,12 +308,12 @@ Use custom RGB or Hex colors. These are converted to the nearest ANSI 256 color.
 
 ```javascript
 // RGB (0-255)
-tcolors('text').rgb(255, 100, 50);
-tcolors('text').bgRgb(30, 144, 255);
+xcolors("text").rgb(255, 100, 50);
+xcolors("text").bgRgb(30, 144, 255);
 
 // Hex (with or without #)
-tcolors('text').hex('#ff6347');
-tcolors('text').bgHex('1e90ff');
+xcolors("text").hex("#ff6347");
+xcolors("text").bgHex("1e90ff");
 ```
 
 ---
@@ -315,10 +324,10 @@ For terminals that support it, use full 24-bit RGB for maximum color precision.
 
 ```javascript
 // Foreground true color
-tcolors('text').truetcolors(255, 99, 71);
+xcolors("text").truecolor(255, 99, 71);
 
 // Background true color
-tcolors('text').bgTruetcolors(30, 144, 255);
+xcolors("text").bgTruecolor(30, 144, 255);
 ```
 
 ---
@@ -328,8 +337,8 @@ tcolors('text').bgTruetcolors(30, 144, 255);
 Directly use a color from the 256-color palette (0-255).
 
 ```javascript
-tcolors('text').ansi256(196);    // Bright red
-tcolors('text').bgAnsi256(21);     // Bright blue
+xcolors("text").ansi256(196); // Bright red
+xcolors("text").bgAnsi256(21); // Bright blue
 ```
 
 ---
@@ -340,47 +349,49 @@ Create beautiful multi-color text.
 
 ```javascript
 // Custom gradient
-const gradient = tcolors.gradient('Hello World', ['#ff0000', '#0000ff']);
+const gradient = xcolors.gradient("Hello World", ["#ff0000", "#0000ff"]);
 console.log(gradient);
 
 // Rainbow effect
-console.log(tcolors.rainbow('Rainbow text!'));
+console.log(xcolors.rainbow("Rainbow text!"));
 ```
 
 ---
 
 ### Direct Functions
 
-For single styles, calling functions directly on `tcolors` is slightly faster as it avoids creating an intermediate object.
+For single styles, calling functions directly on `xcolors` is slightly faster as it avoids creating an intermediate object.
 
 ```javascript
-tcolors.red('Red text');
-tcolors.bold('Bold text');
+xcolors.red("Red text");
+xcolors.bold("Bold text");
 
 // For multiple styles, nest the calls:
-tcolors.bold(tcolors.green('Green and bold'));
+xcolors.bold(xcolors.green("Green and bold"));
 ```
 
 ---
 
 ### Utility Methods
 
-#### `tcolors.strip(text)`
+#### `xcolors.strip(text)`
+
 Remove all ANSI escape codes from a string.
 
 ```javascript
-const colored = tcolors('Hello').red().bold();
-const plain = tcolors.strip(colored); // .toString() is not needed
+const colored = xcolors("Hello").red().bold();
+const plain = xcolors.strip(colored); // .toString() is not needed
 
-console.log(plain);  // 'Hello'
+console.log(plain); // 'Hello'
 ```
 
-#### `tcolors.enabled`
+#### `xcolors.enabled`
+
 A boolean property to check if colors are currently enabled.
 
 ```javascript
-if (tcolors.enabled) {
-  console.log(tcolors.green('Colors are supported!'));
+if (xcolors.enabled) {
+  console.log(xcolors.green("Colors are supported!"));
 }
 ```
 
@@ -392,14 +403,14 @@ if (tcolors.enabled) {
 
 ```javascript
 const theme = {
-  success: (text) => tcolors(text).green(),
-  warning: (text) => tcolors(text).hex('#ffa500'), // Orange
-  error: (text) => tcolors(text).bold().red(),
-  info: (text) => tcolors.cyan(text),
+  success: (text) => xcolors(text).green(),
+  warning: (text) => xcolors(text).hex("#ffa500"), // Orange
+  error: (text) => xcolors(text).bold().red(),
+  info: (text) => xcolors.cyan(text),
 };
 
-console.log(theme.success('Operation completed.'));
-console.log(theme.error('File not found!'));
+console.log(theme.success("Operation completed."));
+console.log(theme.error("File not found!"));
 ```
 
 ### Progress Bars
@@ -408,12 +419,12 @@ console.log(theme.error('File not found!'));
 function progressBar(percent) {
   const filled = Math.round(percent / 5);
   const empty = 20 - filled;
-  
-  const bar = tcolors('█'.repeat(filled)).green() 
-            + tcolors('░'.repeat(empty)).gray();
-  
-  const percentage = tcolors(`${percent}%`).bold();
-  
+
+  const bar =
+    xcolors("█".repeat(filled)).green() + xcolors("░".repeat(empty)).gray();
+
+  const percentage = xcolors(`${percent}%`).bold();
+
   return `${bar} ${percentage}`;
 }
 
@@ -424,36 +435,37 @@ console.log(progressBar(50));
 
 ## 🌍 Environment Support
 
-`tcolors` automatically detects color support. This follows standard conventions.
+`xcolors` automatically detects color support. This follows standard conventions.
 
 - **Disabled** if `NO_COLOR` environment variable is present.
 - **Enabled** if `FORCE_COLOR` environment variable is present.
 - Otherwise, it checks if the output stream is a TTY (a terminal).
 
 You can manually override this detection:
+
 ```javascript
 // Disable colors programmatically
-tcolors.enabled = false;
+xcolors.enabled = false;
 ```
 
 ---
 
 ## 💪 TypeScript Support
 
-`tcolors` is written in TypeScript and provides complete type definitions.
+`xcolors` is written in TypeScript and provides complete type definitions.
 
 ```typescript
-import tcolors, { ColorInstance, Color } from 'tcolors';
+import xcolors, { ColorInstance, Color } from "x-colors";
 
-// The main function returns a ColorInstance
-const instance: ColorInstance = tcolors('text');
+// The xcolors object converts to a string automatically
+const instance: ColorInstance = xcolors("text");
 
 // The instance can be used as a string directly
 const text: string = instance.red().bold();
-console.log('Message: ' + text);
+console.log("Message: " + text);
 
 // The main export has a type
-const tcolorsFn: Color = tcolors;
+const xcolorsFn: Color = xcolors;
 ```
 
 ---
@@ -473,3 +485,7 @@ Contributions are welcome! Please feel free to submit a pull request.
 ## 📜 License
 
 Distributed under the MIT License. See `LICENSE` for more information.
+<<<<<<< HEAD
+=======
+
+>>>>>>> 572c886 (feat: Rename library from tcolors to x-colors and update references)

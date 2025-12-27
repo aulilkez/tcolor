@@ -87,7 +87,7 @@ const hexToRgb = (hex: string): [number, number, number] => {
   return [(num >> 16) & 255, (num >> 8) & 255, num & 255];
 };
 
-// Main tcolors class (optimized for chaining)
+// Main xcolors class (optimized for chaining)
 class ColorInstance {
   protected str: string;
 
@@ -98,7 +98,7 @@ class ColorInstance {
   // Generate all style methods dynamically
   [key: string]: any;
 
-  // Custom RGB tcolors (foreground)
+  // Custom RGB xcolors (foreground)
   rgb(r: number, g: number, b: number): this {
     this.str = `${ESC}38;5;${rgbToAnsi256(r, g, b)}m${this.str}${ESC}39m`;
     return this;
@@ -110,19 +110,19 @@ class ColorInstance {
     return this;
   }
 
-  // Hex tcolors support
-  hex(tcolors: string): this {
-    const [r, g, b] = hexToRgb(tcolors);
+  // Hex xcolors support
+  hex(colors: string): this {
+    const [r, g, b] = hexToRgb(colors);
     return this.rgb(r, g, b);
   }
 
   // Hex background
-  bgHex(tcolors: string): this {
-    const [r, g, b] = hexToRgb(tcolors);
+  bgHex(colors: string): this {
+    const [r, g, b] = hexToRgb(colors);
     return this.bgRgb(r, g, b);
   }
 
-  // 256 tcolors support
+  // 256 xcolors support
   ansi256(code: number): this {
     this.str = `${ESC}38;5;${code}m${this.str}${ESC}39m`;
     return this;
@@ -133,7 +133,7 @@ class ColorInstance {
     return this;
   }
 
-  // True tcolors (24-bit RGB)
+  // True xcolors (24-bit RGB)
   truecolor(r: number, g: number, b: number): this {
     this.str = `${ESC}38;2;${r};${g};${b}m${this.str}${ESC}39m`;
     return this;
@@ -159,33 +159,35 @@ Object.keys(CODES).forEach((name) => {
   const openCode = ESC + open + "m";
   const closeCode = ESC + close + "m";
 
-  ColorInstance.prototype[name] = function (this: ColorInstance): ColorInstance {
+  ColorInstance.prototype[name] = function (
+    this: ColorInstance,
+  ): ColorInstance {
     this.str = openCode + this.str + closeCode;
     return this;
   };
 });
 
-// Main tcolors function (factory pattern for performance)
+// Main xcolors function (factory pattern for performance)
 interface ColorFunction {
   (str: string): ColorInstance;
   [key: string]: any;
 }
 
-const tcolors = ((str: string) => new ColorInstance(str)) as ColorFunction;
+const xcolors = ((str: string) => new ColorInstance(str)) as ColorFunction;
 
-// Add direct style functions to tcolors object
+// Add direct style functions to xcolors object
 Object.keys(CODES).forEach((name) => {
   const [open, close] = CODES[name as StyleName];
   const openCode = ESC + open + "m";
   const closeCode = ESC + close + "m";
-  
-  tcolors[name] = (str: string) => openCode + str + closeCode;
+
+  xcolors[name] = (str: string) => openCode + str + closeCode;
 });
 
 // Utility functions
-tcolors.strip = (str: string): string => str.replace(/\x1b\[[0-9;]*m/g, "");
+xcolors.strip = (str: string): string => str.replace(/\x1b\[[0-9;]*m/g, "");
 
-tcolors.enabled =
+xcolors.enabled =
   !("NO_COLOR" in process.env) &&
   ("FORCE_COLOR" in process.env ||
     process.platform !== "win32" ||
@@ -193,7 +195,7 @@ tcolors.enabled =
     process.stdout?.isTTY);
 
 // Gradient function (optimized)
-tcolors.gradient = (text: string, colorsArr: string[]): string => {
+xcolors.gradient = (text: string, colorsArr: string[]): string => {
   const len = text.length;
   const stops = colorsArr.length - 1;
   let result = "";
@@ -217,8 +219,8 @@ tcolors.gradient = (text: string, colorsArr: string[]): string => {
 };
 
 // Rainbow effect
-tcolors.rainbow = (text: string): string =>
-  tcolors.gradient(text, [
+xcolors.rainbow = (text: string): string =>
+  xcolors.gradient(text, [
     "#ff0000",
     "#ff7f00",
     "#ffff00",
@@ -229,8 +231,8 @@ tcolors.rainbow = (text: string): string =>
   ]);
 
 // Export for both ESM and CommonJS
-export default tcolors;
-export { tcolors, ColorInstance, CODES, rgbToAnsi256, hexToRgb };
+export default xcolors;
+export { xcolors, ColorInstance, CODES, rgbToAnsi256, hexToRgb };
 
 // Type definitions
-export type Color = typeof tcolors;
+export type Color = typeof xcolors;

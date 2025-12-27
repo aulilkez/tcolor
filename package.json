@@ -1,5 +1,5 @@
 {
-  "name": "tcolors",
+  "name": "x-colors",
   "version": "1.0.0",
   "description": "⚡ Ultra-fast ANSI color library with zero dependencies - Fastest in the ecosystem",
   "license": "MIT",
@@ -48,7 +48,7 @@
   },
   "keywords": [
     "color",
-    "tcolors",
+    "xcolors",
     "color-conversion",
     "color-manipulation",
     "ansi",
@@ -77,12 +77,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aulilkez/tcolors"
+    "url": "git+https://github.com/aulilkez/x-colors"
   },
   "bugs": {
-    "url": "https://github.com/aulilkez/tcolors/issues"
+    "url": "https://github.com/aulilkez/x-colors/issues"
   },
-  "homepage": "https://github.com/aulilkez/tcolors#readme",
+  "homepage": "https://github.com/aulilkez/x-colors#readme",
   "funding": "https://github.com/sponsors/aulilkez",
   "engines": {
     "node": ">=14"
