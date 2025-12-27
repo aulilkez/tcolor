@@ -1,0 +1,93 @@
+{
+  "name": "tcolor",
+  "version": "1.0.0",
+  "description": "⚡ Ultra-fast ANSI color library with zero dependencies - Fastest in the ecosystem",
+  "license": "MIT",
+  "author": {
+    "name": "aulilkez",
+    "email": "aulil2427@gmail.com",
+    "url": "https://aulilabsor.netlify.app"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "prepublishOnly": "npm run build",
+    "test": "node test/main.test.js",
+    "benchmark": "node benchmark/compare.js",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.3",
+    "chalk": "^5.6.2",
+    "kleur": "^4.1.5",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  },
+  "keywords": [
+    "color",
+    "tcolor",
+    "color-conversion",
+    "color-manipulation",
+    "ansi",
+    "colors",
+    "terminal",
+    "console",
+    "chalk",
+    "cli",
+    "style",
+    "fast",
+    "performance",
+    "zero-dependency",
+    "typescript",
+    "esm",
+    "commonjs",
+    "rgb",
+    "hex",
+    "gradient",
+    "rainbow",
+    "truecolor",
+    "256color",
+    "colors-cli",
+    "terminal-colors",
+    "ansi-escape-codes",
+    "developer-tools"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aulilkez/tcolor"
+  },
+  "bugs": {
+    "url": "https://github.com/aulilkez/tcolor/issues"
+  },
+  "homepage": "https://github.com/aulilkez/tcolor#readme",
+  "funding": "https://github.com/sponsors/aulilkez",
+  "engines": {
+    "node": ">=14"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
